@@ -1,8 +1,20 @@
-import csv
+digits = [1, 2, 3, 4, 5]
+a = -10
 
-num = int(input()) - 1
-with open('deniro.csv', 'r', encoding='utf-8') as file:
-    rows = csv.reader(file)
-    result = sorted(rows, key=lambda x: int(x[num]) if x[num].isdigit() else x[num])
-    for elem in result:
-        print(*elem)
+b = 5
+result = []
+# Проходим по каждому элементу исходного списка
+for h in digits:
+    # Если модуль элемента вне заданного диапазона, сохраняем его
+    if abs(h) < a or abs(h) > b:
+        result.append(h)
+
+# Добавляем нули в конец нового списка, чтобы длина осталась прежней
+while len(result) < len(digits):
+    result.append(0)
+
+# Пример использования функции
+
+
+print("Исходный список:", digits)
+print("Результат после сжатия:", result)
