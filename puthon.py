@@ -26,7 +26,7 @@ import random
 # except:
 #     print('ВВЕДЕНО НЕВЕРНОЕ ЗНАЧЕНИЕ')
 #
-#
+
 # 2
 # try:
 #     m, count = int(input('Введите количество элементов: ')), 0
@@ -42,14 +42,20 @@ import random
 #         print('ЛИБО ЗНАЧЕНИЕ ВВЕДЕНО ОТРИЦАТЕЛЬНОЕ, ЛИБО ГЛАВНАЯ ДИАГОНАЛЬ СОСТОИТ ИЗ 1 ЭЛЕМЕНТА')
 # except:
 #     print('ВВЕДЕНО НЕВЕРНОЕ ЗНАЧЕНИЕ')
+
+
 # 3
 try:
     n, vocabulary = int(input('Введите число элементов в словаре: ')), {}
     if n > 0:
         for _ in range(n):
             row, country = input('Введите название реки: '), input('Введите страну в которой находится эта река: ')
-            if row.isalpha() == True and country.isalpha() == True:
-                vocabulary[row] = country
+            vocabulary[row] = country
+            # if row.isalpha() == True and country.isalpha() == True:
+            #     vocabulary[row] = country
+            # elif row.isalpha() != True and country.isalpha() != True:
+            #     break
+            #     print('ЕВЕРНЫЕ ЗНАЧЕНИЯ')
 
     lst = [input('Введите реку для списка поиска: ') for _ in range(n)]
     print(vocabulary)
