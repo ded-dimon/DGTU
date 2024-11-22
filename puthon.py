@@ -37,23 +37,26 @@ import random
 #             for h in range(m):
 #                 if h > k and lst[k][h] < 0:
 #                     count += 1
-#         print(count)
+#         print(f'Количество отрицательных чиел выше главной диагонали: {count}')
 #     else:
 #         print('ЛИБО ЗНАЧЕНИЕ ВВЕДЕНО ОТРИЦАТЕЛЬНОЕ, ЛИБО ГЛАВНАЯ ДИАГОНАЛЬ СОСТОИТ ИЗ 1 ЭЛЕМЕНТА')
 # except:
 #     print('ВВЕДЕНО НЕВЕРНОЕ ЗНАЧЕНИЕ')
 # 3
-# try:
-#     n = int(input('Введите число элементов в словаре: '))
-#     if n > 0:
-#         vocabulary = {input('Введите название реки: '): input('Введите страну в которой находится эта река: ') for _ in
-#                       range(n)}
-#         lst = [input('Введите реку для списка поиска: ') for _ in range(n)]
-#         print(vocabulary)
-#         for elem in vocabulary.items():
-#             if elem[0] in lst:
-#                 print(f'{elem[0]} в {elem[1]}')
-#     else:
-#         print('Словарь пуст или его количество отрицательно')
-# except:
-#     print('ВВЕДЕНО НЕВЕРНОЕ ЗНАЧЕНИЕ')
+try:
+    n, vocabulary = int(input('Введите число элементов в словаре: ')), {}
+    if n > 0:
+        for _ in range(n):
+            row, country = input('Введите название реки: '), input('Введите страну в которой находится эта река: ')
+            if row.isalpha() == True and country.isalpha() == True:
+                vocabulary[row] = country
+
+    lst = [input('Введите реку для списка поиска: ') for _ in range(n)]
+    print(vocabulary)
+    for elem in vocabulary.items():
+        if elem[0] in lst:
+            print(f'{elem[0]} в {elem[1]}')
+    if n <= 0 or len(vocabulary) == 0:
+        print('Словарь пуст или его количество отрицательно')
+except:
+    print('ВВЕДЕНО НЕВЕРНОЕ ЗНАЧЕНИЕ')
