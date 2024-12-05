@@ -1,68 +1,53 @@
-import random
-
-#1
+# 1
+# def stepen(x: float, n: int):
+#     total = 1
+#     for _ in range(abs(n)):
+#         total *= x
+#     return total if n > 0 else 1 / total
+#
+#
+# def F(k: int, a: int):
+#     return stepen(2.7, k) + stepen((a + 1), -5)
+#
+#
 # try:
-#     n, total = int(input('Введите количество элементов: ')), 0
-#     if n > 0:
-#         result = [[random.randint(-10, 10) for _ in range(n)] for _ in range(n)]
-#         print(*result, sep='\n')
-#         for i in range(n):
-#             for j in range(n):
-#                 flag = True
-#                 if i > 0 and result[i][j] >= result[i - 1][j]:
-#                     flag = False
-#                 elif i < n - 1 and result[i][j] >= result[i + 1][j]:
-#                     flag = False
-#                 elif j > 0 and result[i][j] >= result[i][j - 1]:
-#                     flag = False
-#                 elif j < n - 1 and result[i][j] >= result[i][j + 1]:
-#                     flag = False
-#
-#                 if flag is True:
-#                     total += 1
-#         print(f'Количество локальных минимумов: {total}')
-#     else:
-#         print('ВВЕДЕНА НЕВЕРНАЯ ДЛИНА СПИСКА')
+#     row, integer = int(input('Введите значение степени для 2.7: ')), float(input('Введите значения а для функции: '))
+#     print(F(row, integer))
 # except:
-#     print('ВВЕДЕНО НЕВЕРНОЕ ЗНАЧЕНИЕ')
-#
+#     print('Введено неверное значение')
 
 # 2
-# try:
-#     m, count = int(input('Введите количество элементов: ')), 0
-#     if m > 1:
-#         lst = [[random.randint(-10, 10) for _ in range(m)] for _ in range(m)]
-#         print(*lst, sep='\n')
-#         for k in range(m):
-#             for h in range(m):
-#                 if h > k and lst[k][h] < 0:
-#                     count += 1
-#         print(f'Количество отрицательных чиел выше главной диагонали: {count}')
+# def IsLeapYear(Y):
+#     if (Y % 4 == 0 and Y % 100 != 0) or (Y % 400 == 0):
+#         return 'TRUE'
 #     else:
-#         print('ЛИБО ЗНАЧЕНИЕ ВВЕДЕНО ОТРИЦАТЕЛЬНОЕ, ЛИБО ГЛАВНАЯ ДИАГОНАЛЬ СОСТОИТ ИЗ 1 ЭЛЕМЕНТА')
-# except:
-#     print('ВВЕДЕНО НЕВЕРНОЕ ЗНАЧЕНИЕ')
-
+#         return 'FALSE'
+#
+#
+# for _ in range(5):
+#     try:
+#         year = int(input('Введите год на проверку нависокосность: '))
+#         if year >= 0:
+#             print(f'{year} год является {IsLeapYear(year)}')
+#         else:
+#             print('Введене неверное значение')
+#     except:
+#         print('Введене неверное значение')
 
 # 3
-try:
-    n, vocabulary = int(input('Введите число элементов в словаре: ')), {}
-    if n > 0:
-        for _ in range(n):
-            row, country = input('Введите название реки: '), input('Введите страну в которой находится эта река: ')
-            vocabulary[row] = country
-            # if row.isalpha() == True and country.isalpha() == True:
-            #     vocabulary[row] = country
-            # elif row.isalpha() != True and country.isalpha() != True:
-            #     break
-            #     print('ЕВЕРНЫЕ ЗНАЧЕНИЯ')
-
-    lst = [input('Введите реку для списка поиска: ') for _ in range(n)]
-    print(vocabulary)
-    for elem in vocabulary.items():
-        if elem[0] in lst:
-            print(f'{elem[0]} в {elem[1]}')
-    if n <= 0 or len(vocabulary) == 0:
-        print('Словарь пуст или его количество отрицательно')
-except:
-    print('ВВЕДЕНО НЕВЕРНОЕ ЗНАЧЕНИЕ')
+# def recur(N):
+#     if N == 1:
+#         return "YES"
+#     elif N % 2 != 0:
+#         return "NO"
+#     return recur(N // 2)
+#
+#
+# try:
+#     N = int(input('Введите число для проверки на степень 2: '))
+#     if N >= 0:
+#         print(recur(N))
+#     else:
+#         print('Введене ненатуральное значение')
+# except:
+#     print('Введене неверное значение')
